@@ -1,0 +1,7 @@
+.itemcontainer {
+  display: flex;
+}
+
+.itemcontainer > div {
+  margin: 2% 2%;
+}

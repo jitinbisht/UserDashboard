@@ -1,0 +1,19 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+}
+.username {
+  margin: 10px;
+}
+
+.username > input {
+  margin: 10px;
+}
+
+.password {
+  margin: 10px;
+}
+
+.password > input {
+  margin: 10px;
+}
