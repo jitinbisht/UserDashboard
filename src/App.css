@@ -1,6 +1,29 @@
 .App {
   text-align: center;
 }
+body {
+  background: #282c34;
+  color: white;
+}
+a {
+  color: white;
+  font-weight: 800;
+}
+input[type="text"] {
+  font-size: 15px;
+}
+button {
+  color: #fff;
+  background-color: #e50914;
+  line-height: normal;
+  margin: 0 3% 0;
+  padding: 7px 17px;
+  font-weight: 400;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -25,11 +48,23 @@
 .header {
   display: flex;
   height: 100px;
-  background: rgb(221, 208, 208);
+  background: rgb(8, 8, 8);
   align-items: center;
+  color: white;
+  /* justify-content: flex-start; */
 }
 .header > div {
   width: 100px;
+  /* flex-grow: 1; */
+}
+.header > div:nth-child(1) {
+  margin: 0 10% 0 20px;
+}
+.header > div:nth-child(3) {
+  margin-left: 50%;
+}
+.header > div:nth-child(4) {
+  margin-left: 10%;
 }
 .create {
   margin-left: auto;

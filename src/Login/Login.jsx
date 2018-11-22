@@ -3,6 +3,8 @@ import "./login.css";
 import userList from "../userlist";
 import HeaderItems from "../Components/HeaderItems/HeaderItems";
 
+import { setCookie } from "../utils";
+
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ export default class Login extends React.Component {
     //const password = document.getElementById("password");
 
     if (userName === "jb") {
+      setCookie("username", userName);
       this.props.history.push({
         pathname: "/dashboard",
         loggedInUser: userList[0] // this is hardcoded value

@@ -2,6 +2,8 @@ import React from "react";
 import ListItem from "../Components/ListItem/ListItem";
 import userList from "../userlist";
 import HeaderItems from "../Components/HeaderItems/HeaderItems";
+import "./Dashboard.css";
+import { getCookie } from "../utils";
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -83,14 +85,16 @@ export default class Dashboard extends React.Component {
   };
 
   render() {
+    const username = getCookie("username");
     const renderListItem = this.fnRenderListItem();
     const { pathname, loggedInUser } = this.props.location;
     console.log("log-dashboard", this.props);
+
     return (
       <React.Fragment>
         <HeaderItems pathname={pathname} />
-        <h1>Hello {loggedInUser && loggedInUser.name}</h1>
-        {renderListItem}
+        <h1>Hello {username}</h1>
+        <div className="list_group">{renderListItem}</div>
       </React.Fragment>
     );
   }

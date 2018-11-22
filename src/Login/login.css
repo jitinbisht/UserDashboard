@@ -1,7 +1,22 @@
 .loginContainer {
   display: flex;
   flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  margin-left: 35%;
+  background: #580707d4;
+  font-weight: 800;
+  padding-top: 1%;
 }
+.loginContainer input {
+  width: 80%;
+  height: 28px;
+}
+
+.loginContainer button {
+  margin-bottom: 20px;
+}
+
 .username {
   margin: 10px;
 }

@@ -4,4 +4,15 @@
 
 .itemcontainer > div {
   margin: 2% 2%;
+  flex-grow: 1;
+}
+
+.itemcontainer:nth-child(odd) {
+  /* background: #43b820;
+  color: white; */
+}
+
+.itemcontainer input {
+  height: 28px;
+  width: 100%;
 }
