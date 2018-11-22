@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ListItem from "../Components/ListItem/ListItem";
 import userList from "../userlist";
+import HeaderItems from "../Components/HeaderItems/HeaderItems";
 
 const propTypes = {};
 
@@ -44,10 +45,12 @@ export default class Dashboard extends React.Component {
 
   render() {
     const renderListItem = this.fnRenderListItem();
+    const { pathname } = this.props.location;
     console.log("log", this.props.location);
     return (
       <React.Fragment>
-        Hello Dashboard
+        <HeaderItems pathname={pathname} />
+
         {renderListItem}
       </React.Fragment>
     );

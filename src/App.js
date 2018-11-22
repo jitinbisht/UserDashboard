@@ -4,7 +4,8 @@ import "./App.css";
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HeaderItems from "./Components/HeaderItems/HeaderItems";
 
 class App extends Component {
   render() {
@@ -12,15 +13,6 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <div className="header">
-              <div className="title">
-                <Link to="/">Title</Link>
-              </div>
-              <div className="dashboard">
-                <Link to="/dashboard/">Dashboard</Link>
-              </div>
-              <div className="create">create</div>
-            </div>
             <Route path="/" exact component={Login} />
             <Route path="/dashboard" component={Dashboard} />
           </div>

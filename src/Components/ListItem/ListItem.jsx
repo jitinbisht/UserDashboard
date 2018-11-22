@@ -17,6 +17,13 @@ export default class ListItem extends React.Component {
     document.getElementById("name").readOnly = false;
   };
 
+  //   toggleButton = () => {
+  //     this.setState({
+  //       isEdit: true,
+  //       isDelete: true
+  //     });
+  //   };
+
   render() {
     const { name, email, contact, address, hobbies, id, role } = this.props;
     return (

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./login.css";
 import userList from "../userlist";
+import HeaderItems from "../Components/HeaderItems/HeaderItems";
 
 const propTypes = {};
 
@@ -28,8 +29,11 @@ export default class Login extends React.Component {
   };
 
   render() {
+    const { pathname } = this.props.location;
+    console.log("log1", this.props.location);
     return (
       <React.Fragment>
+        <HeaderItems pathname={pathname} />
         <h1>Login</h1>
 
         <br />
