@@ -5,7 +5,7 @@ const userList = [
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
     hobbies: "biking",
-    role: "user",
+    role: "admin",
     username: "jb",
     password: "jb",
     editable: false,

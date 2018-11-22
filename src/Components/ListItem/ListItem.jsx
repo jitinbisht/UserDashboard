@@ -1,10 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./ListItem.css";
-
-const propTypes = {};
-
-const defaultProps = {};
 
 export default class ListItem extends React.Component {
   constructor(props) {
@@ -12,20 +7,39 @@ export default class ListItem extends React.Component {
     this.state = {};
   }
 
-  fnEdit = () => {
-    console.log("dsfsdfsd");
-    document.getElementById("name").readOnly = false;
+  fnEdit = event => {
+    debugger;
+    this.setState(
+      {
+        userObj: {
+          ...this.state.userObj,
+          [event.target.name]: event.target.value
+        }
+      },
+      () => {
+        console.log("this.state", this.state);
+      }
+    );
+
+    //debugger;
+    // document.getElementById("name").readOnly = false;
   };
 
-  //   toggleButton = () => {
-  //     this.setState({
-  //       isEdit: true,
-  //       isDelete: true
-  //     });
-  //   };
+  updateUserRow = id => {
+    this.props.editUser(id, this.state.userObj);
+  };
 
   render() {
     const { name, email, contact, address, hobbies, id, role } = this.props;
+    const userObj = {
+      name,
+      email,
+      contact,
+      address,
+      hobbies,
+      id,
+      role
+    };
     return (
       <React.Fragment>
         <div className="itemcontainer" key={id}>
@@ -37,44 +51,69 @@ export default class ListItem extends React.Component {
                 id="name"
                 placeholder={name}
                 onChange={this.fnEdit}
-                onClick={this.fnEdit}
               />
             ) : (
               <span>{name}</span>
             )}
           </div>
-          <div className="name">
+          <div className="email">
             {this.props.editable ? (
-              <input type="text" name="address" id="" />
+              <input
+                type="text"
+                name="email"
+                id=""
+                onChange={this.fnEdit}
+                placeholder={email}
+              />
             ) : (
               <span>{email}</span>
             )}
           </div>
-          <div className="name">
+          <div className="contact">
             {this.props.editable ? (
-              <input type="text" name="address" id="" />
+              <input
+                type="text"
+                name="contact"
+                id=""
+                onChange={this.fnEdit}
+                placeholder={contact}
+              />
             ) : (
               <span>{contact}</span>
             )}
           </div>
-          <div className="name">
+          <div className="address">
             {this.props.editable ? (
-              <input type="text" name="address" id="" />
+              <input
+                type="text"
+                name="address"
+                id=""
+                onChange={this.fnEdit}
+                placeholder={address}
+              />
             ) : (
               <span>{address}</span>
             )}
           </div>
-          <div className="name">
+          <div className="hobbies">
             {this.props.editable ? (
-              <input type="text" name="address" id="" />
+              <input
+                type="text"
+                name="hobbies"
+                id=""
+                onChange={this.fnEdit}
+                placeholder={hobbies}
+              />
             ) : (
               <span>{hobbies}</span>
             )}
           </div>
           <div className="editable">
-            <button onClick={this.props.editUser.bind(this, id)}>Edit</button>
+            <button onClick={this.updateUserRow.bind(this, id, userObj)}>
+              {this.props.editable ? <span>Save</span> : <span>Edit</span>}
+            </button>
           </div>
-          {role == "admin" && (
+          {role === "admin" && (
             <div className="delete">
               <button>Delete</button>
             </div>
@@ -84,6 +123,3 @@ export default class ListItem extends React.Component {
     );
   }
 }
-
-ListItem.propTypes = propTypes;
-ListItem.defaultProps = defaultProps;

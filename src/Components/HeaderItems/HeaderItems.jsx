@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const propTypes = {};
+// const propTypes = {};
 
-const defaultProps = {};
+// const defaultProps = {};
 
 export default class HeaderItems extends React.Component {
   constructor(props) {
@@ -50,5 +50,5 @@ export default class HeaderItems extends React.Component {
   }
 }
 
-HeaderItems.propTypes = propTypes;
-HeaderItems.defaultProps = defaultProps;
+// HeaderItems.propTypes = propTypes;
+// HeaderItems.defaultProps = defaultProps;
