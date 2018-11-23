@@ -77,7 +77,7 @@ export default class Dashboard extends React.Component {
       this.setState({ userList: tempArray });
       console.log("save is clicked");
     } else {
-      alert("Please fill all values");
+      alert("Please fill mandatory fields. Name,email,contact,address");
     }
   };
 
