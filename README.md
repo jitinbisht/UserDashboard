@@ -71,10 +71,10 @@ This will build and create minified js and css bundle.
 
 - The dashboard page contains below form fields along with validations:
 
-  a) Name (Mandatory, Text Min Length: 2, Text Max Length: 100).
-  b) Email (Mandatory, Text Min Length: 6, Text Max Length: 100): (should be valid email).
-  c) Contact Number (Mandatory, Text Min Length: 10, Text Max Length: 13) (+91 9999999999): Input should allow only + and digits.
-  d) Address (Mandatory, Text Min Length: 50, Text Max Length: 255).
-  e) Personal Interests & Hobbies (Optional, Text Min Length: 25, Text Max Length: 500).
-  f) A 'Regular user' or 'admin' can edit the details on the dashboard for each record by clicking 'Edit' button.
-  g) Only 'Admin' user can see the 'Delete' button and delete any record.
+  - Name (Mandatory, Text Min Length: 2, Text Max Length: 100).
+  - Email (Mandatory, Text Min Length: 6, Text Max Length: 100): (should be valid email).
+  - Contact Number (Mandatory, Text Min Length: 10, Text Max Length: 13) (+91 9999999999): Input should allow only + and digits.
+  - Address (Mandatory, Text Min Length: 50, Text Max Length: 255).
+  - Personal Interests & Hobbies (Optional, Text Min Length: 25, Text Max Length: 500).
+  - A 'Regular user' or 'admin' can edit the details on the dashboard for each record by clicking 'Edit' button.
+  - Only 'Admin' user can see the 'Delete' button and delete any record.
