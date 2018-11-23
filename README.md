@@ -1,4 +1,8 @@
-This is a basic config project
+### Note
+
+- This is a basic config project, as requested by team.
+- All features as requested are nearly complete.
+- Due to lack of time some minor details may be missing.
 
 ## Live link
 
