@@ -8,7 +8,8 @@ import { getCookie } from "../utils";
 export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { userList };
+    this.state = { userList, currentUser: {} };
+    this.fnDeleteUser = this.fnDeleteUser.bind(this);
   }
 
   /**
@@ -63,8 +64,18 @@ export default class Dashboard extends React.Component {
     }
   };
 
+  /**
+   *
+   */
+  fnDeleteUser = userId => {
+    const index = this.state.userList.map(item => item.id).indexOf(userId);
+    const tempUserList = [...this.state.userList];
+    const newState = [tempUserList.splice(index, 1)];
+    this.setState({ userList: tempUserList });
+  };
+
   fnRenderListItem = () => {
-    const { loggedInUser } = this.props.location;
+    // const { loggedInUser } = this.props.location;
     return this.state.userList.map(user => {
       const { name, email, contact, address, hobbies, id, role } = user;
       return (
@@ -77,13 +88,31 @@ export default class Dashboard extends React.Component {
           address={address}
           hobbies={hobbies}
           contact={contact}
-          role={loggedInUser ? loggedInUser.role : false}
+          role={this.state.currentUser.role}
           editUser={this.fnEditUser}
+          deleteUser={this.fnDeleteUser}
         />
       );
     });
   };
 
+  componentDidMount() {
+    const username = getCookie("username");
+    const getUserObj = JSON.parse(getCookie("userobj"));
+    this.setState(
+      {
+        currentUser: getUserObj
+      },
+      () => {
+        console.log("cookie", this.state);
+      }
+    );
+    if (!username) {
+      this.props.history.push({
+        pathname: "/"
+      });
+    }
+  }
   render() {
     const username = getCookie("username");
     const renderListItem = this.fnRenderListItem();
@@ -93,7 +122,7 @@ export default class Dashboard extends React.Component {
     return (
       <React.Fragment>
         <HeaderItems pathname={pathname} />
-        <h1>Hello {username}</h1>
+        <h1>Hello {this.state.currentUser.name}</h1>
         <div className="list_group">{renderListItem}</div>
       </React.Fragment>
     );

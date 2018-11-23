@@ -29,6 +29,11 @@ export default class ListItem extends React.Component {
     this.props.editUser(id, this.state.userObj);
   };
 
+  deleteUser = (id, userObj) => {
+    this.props.deleteUser(id);
+    // console.log(id, userObj, "====id====");
+  };
+
   render() {
     const { name, email, contact, address, hobbies, id, role } = this.props;
     const userObj = {
@@ -42,7 +47,7 @@ export default class ListItem extends React.Component {
     };
     return (
       <React.Fragment>
-        <div className="itemcontainer" key={id}>
+        <div className="itemcontainer">
           <div className="name">
             {this.props.editable ? (
               <input
@@ -115,7 +120,9 @@ export default class ListItem extends React.Component {
           </div>
           {role === "admin" && (
             <div className="delete">
-              <button>Delete</button>
+              <button onClick={this.deleteUser.bind(this, id, userObj)}>
+                Delete
+              </button>
             </div>
           )}
         </div>

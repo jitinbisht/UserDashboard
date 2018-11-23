@@ -3,7 +3,7 @@ import "./login.css";
 import userList from "../userlist";
 import HeaderItems from "../Components/HeaderItems/HeaderItems";
 
-import { setCookie } from "../utils";
+import { setCookie, deleteAllCookies } from "../utils";
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -11,20 +11,50 @@ export default class Login extends React.Component {
     this.state = {};
   }
 
+  checkUserExists = (userName, password) => {
+    const usernameArray = userList.map(user => {
+      return user.username;
+    });
+    const passwordArray = userList.map(user => {
+      return user.password;
+    });
+
+    const index = usernameArray.indexOf(userName);
+
+    if (index !== -1 && passwordArray[index] == password) {
+      return {
+        isLoggedIn: true,
+        user: userList[index]
+      };
+    } else {
+      return {
+        isLoggedIn: false
+      };
+    }
+  };
+
   validateLogin = () => {
     const userName = document.getElementById("username").value;
-    //const password = document.getElementById("password");
+    const password = document.getElementById("password").value;
 
-    if (userName === "jb") {
+    const isValidUser = this.checkUserExists(userName, password);
+
+    //const password = document.getElementById("password");
+    if (isValidUser.isLoggedIn) {
       setCookie("username", userName);
+      setCookie("userobj", JSON.stringify(isValidUser.user));
       this.props.history.push({
         pathname: "/dashboard",
-        loggedInUser: userList[0] // this is hardcoded value
+        loggedInUser: isValidUser.user // this is hardcoded value
       });
     } else {
       alert("please verify userid and password");
     }
   };
+
+  componentDidMount() {
+    deleteAllCookies();
+  }
 
   render() {
     const { pathname } = this.props.location;

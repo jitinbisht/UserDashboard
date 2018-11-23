@@ -38,8 +38,8 @@ export default class HeaderItems extends React.Component {
       <React.Fragment>
         <div className="header">
           <div className="title">
-            <Link to="/">
-              <img height="40px" src={url} alt="" />
+            <Link to="/dashboard">
+              <img height="50px" src={url} alt="" />
             </Link>
           </div>
           {dashboard && (
@@ -47,12 +47,16 @@ export default class HeaderItems extends React.Component {
               <Link to="/dashboard/">Dashboard</Link>
             </div>
           )}
-          <div className="create">
-            <Link to="/create/">create</Link>
-          </div>
-          <div className="Logout">
-            <Link to="/logout/">logout</Link>
-          </div>
+          {dashboard && (
+            <div className="create">
+              <Link to="/create/">create</Link>
+            </div>
+          )}
+          {dashboard && (
+            <div className="Logout">
+              <Link to="/">logout</Link>
+            </div>
+          )}
         </div>
       </React.Fragment>
     );

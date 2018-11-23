@@ -12,14 +12,14 @@ const userList = [
     id: 1001
   },
   {
-    name: "Jitin Bisht 2",
+    name: "gyanesh gouraw",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
     hobbies: "biking",
     role: "user",
-    username: "jb",
-    password: "jb",
+    username: "gg",
+    password: "gg",
     editable: false,
     id: 1002
   },
@@ -60,7 +60,7 @@ const userList = [
     id: 1005
   },
   {
-    name: "Brijesh Prasad",
+    name: "Brijesh Prasad 6",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -72,7 +72,7 @@ const userList = [
     id: 1006
   },
   {
-    name: "Jitin Bisht 2",
+    name: "Jitin Bisht 7",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -81,10 +81,10 @@ const userList = [
     username: "jb",
     password: "jb",
     editable: false,
-    id: 1002
+    id: 1007
   },
   {
-    name: "Jitin Bish 3",
+    name: "Jitin Bish 08",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -93,10 +93,10 @@ const userList = [
     username: "jb",
     password: "jb",
     editable: false,
-    id: 1003
+    id: 1008
   },
   {
-    name: "Jitin Bisht 4",
+    name: "Jitin Bisht 09",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -105,10 +105,10 @@ const userList = [
     username: "jb",
     password: "jb",
     editable: false,
-    id: 1004
+    id: 1009
   },
   {
-    name: "Jitin Bisht 5",
+    name: "Jitin Bisht 10",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -117,10 +117,10 @@ const userList = [
     username: "jb",
     password: "jb",
     editable: false,
-    id: 1005
+    id: 1010
   },
   {
-    name: "Brijesh Prasad",
+    name: "Brijesh Prasad11",
     email: "jb@gmail.com",
     contact: "9090909090",
     address: "B-105 KP BTM 1st Stage",
@@ -129,7 +129,7 @@ const userList = [
     username: "bp",
     password: "bp",
     editable: false,
-    id: 1006
+    id: 1011
   }
 ];
 
