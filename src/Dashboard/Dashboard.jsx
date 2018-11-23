@@ -94,6 +94,16 @@ export default class Dashboard extends React.Component {
 
   /**
    *
+   * @param {*} newUserObj
+   */
+  fnAddNewUser(newUserObj) {
+    this.setState({
+      userList: [...this.state.userList, newUserObj]
+    });
+  }
+
+  /**
+   *
    */
   fnEditUser = (userId, userObj) => {
     const index = this.state.userList.map(item => item.id).indexOf(userId);
@@ -142,16 +152,17 @@ export default class Dashboard extends React.Component {
   };
 
   componentDidMount() {
+    const { pathname, newUserObj } = this.props.location;
+    if (newUserObj) {
+      this.fnAddNewUser(newUserObj);
+    }
     const username = getCookie("username");
-    const getUserObj = JSON.parse(getCookie("userobj"));
-    this.setState(
-      {
-        currentUser: getUserObj
-      },
-      () => {
-        console.log("cookie", this.state);
-      }
-    );
+    const getUserObj = getCookie("userobj")
+      ? JSON.parse(getCookie("userobj"))
+      : "";
+    this.setState({
+      currentUser: getUserObj
+    });
     if (!username) {
       this.props.history.push({
         pathname: "/"
@@ -159,15 +170,15 @@ export default class Dashboard extends React.Component {
     }
   }
   render() {
-    const username = getCookie("username");
+    // const username = getCookie("username");
     const renderListItem = this.fnRenderListItem();
-    const { pathname, loggedInUser } = this.props.location;
+    const { pathname, newUserObj } = this.props.location;
     console.log("log-dashboard", this.props);
 
     return (
       <React.Fragment>
-        <HeaderItems pathname={pathname} />
-        <h1>Hello {this.state.currentUser.name}</h1>
+        <HeaderItems pathname="/dashboard" />
+        <h1>Welcome {this.state.currentUser.name}</h1>
         <div className="list_group">{renderListItem}</div>
       </React.Fragment>
     );

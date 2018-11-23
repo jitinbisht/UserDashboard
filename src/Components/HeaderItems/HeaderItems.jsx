@@ -20,6 +20,9 @@ export default class HeaderItems extends React.Component {
       case "/dashboard":
         this.setState({ dashboard: true });
         break;
+      case "/createUser":
+        this.setState({ dashboard: true });
+        break;
 
       default:
         break;
@@ -49,7 +52,7 @@ export default class HeaderItems extends React.Component {
           )}
           {dashboard && (
             <div className="create">
-              <Link to="/create/">create</Link>
+              <Link to="/createUser/">Create New User</Link>
             </div>
           )}
           {dashboard && (

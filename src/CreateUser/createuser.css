@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > div {
+  margin: 2%;
+  width: 30%;
+}
+
+div > span {
+  margin-right: 2%;
+}
