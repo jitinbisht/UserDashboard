@@ -8,21 +8,12 @@ export default class ListItem extends React.Component {
   }
 
   fnEdit = event => {
-    debugger;
-    this.setState(
-      {
-        userObj: {
-          ...this.state.userObj,
-          [event.target.name]: event.target.value
-        }
-      },
-      () => {
-        console.log("this.state", this.state);
+    this.setState({
+      userObj: {
+        ...this.state.userObj,
+        [event.target.name]: event.target.value
       }
-    );
-
-    //debugger;
-    // document.getElementById("name").readOnly = false;
+    });
   };
 
   updateUserRow = id => {
